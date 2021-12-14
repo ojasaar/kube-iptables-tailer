@@ -4,6 +4,7 @@ COPY . $GOPATH/src/github.com/box/kube-iptables-tailer
 RUN make build
 
 FROM alpine
+RUN apk update && apk upgrade
 LABEL maintainer="Saifuding Diliyaer <sdiliyaer@box.com>"
 WORKDIR /root/
 RUN apk --update add iptables
